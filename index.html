@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DooGamesStudio — Indie Game Development</title>
-    <meta name="description" content="DooGamesStudio — indie game development, experimental AI projects, Unity, runners, tactical sims and more.">
+    <title>DOO Games Studio — Unity Technical Lead & Game Development</title>
+    <meta name="description" content="DOO Games Studio — portfolio of Unity Technical Lead Oleksii Dolbonosov: MMORPGs, shooters, AR/VR, simulations, runners and AI/LLM-assisted gamedev tooling.">
 
+    <link rel="icon" type="image/png" href="LogoDooGamesStudio.png" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
     <style>
         :root {
             --bg-main: #050816;
-            --bg-elevated: rgba(15, 23, 42, 0.85);
+            --bg-elevated: rgba(15, 23, 42, 0.9);
             --accent: #7c3aed;
             --accent-soft: #22d3ee;
             --text-main: #e5e7eb;
             --text-muted: #9ca3af;
             --border-soft: rgba(148, 163, 184, 0.3);
             --radius-xl: 18px;
-            --shadow-soft: 0 20px 40px rgba(15, 23, 42, 0.8);
+            --shadow-soft: 0 20px 40px rgba(15, 23, 42, 0.9);
             --transition-fast: 0.18s ease-out;
         }
 
@@ -34,7 +35,7 @@
         body {
             margin: 0;
             font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: radial-gradient(circle at 0% 0%, #0f172a 0, #020617 40%, #000 100%);
+            background: radial-gradient(circle at 0% 0%, #0f172a 0, #020617 45%, #000 100%);
             color: var(--text-main);
             min-height: 100vh;
         }
@@ -45,29 +46,27 @@
             pointer-events: none;
             z-index: -1;
             background:
-                radial-gradient(circle at 10% 20%, rgba(124, 58, 237, 0.35) 0, transparent 50%),
+                radial-gradient(circle at 12% 18%, rgba(124, 58, 237, 0.35) 0, transparent 55%),
                 radial-gradient(circle at 80% 0%, rgba(56, 189, 248, 0.3) 0, transparent 55%),
-                radial-gradient(circle at 50% 100%, rgba(236, 72, 153, 0.25) 0, transparent 55%);
-            opacity: 0.7;
+                radial-gradient(circle at 50% 100%, rgba(236, 72, 153, 0.25) 0, transparent 60%);
+            opacity: 0.75;
             filter: blur(2px);
             animation: float-bg 18s alternate infinite;
         }
 
         @keyframes float-bg {
-            0% {
-                transform: translate3d(0, 0, 0) scale(1);
-            }
-            100% {
-                transform: translate3d(0, -20px, 0) scale(1.02);
-            }
+            0% { transform: translate3d(0, 0, 0) scale(1); }
+            100% { transform: translate3d(0, -20px, 0) scale(1.02); }
         }
+
+        /* NAV */
 
         .nav {
             position: sticky;
             top: 0;
             z-index: 30;
             backdrop-filter: blur(18px);
-            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.4), transparent);
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.5), transparent);
             border-bottom: 1px solid rgba(148, 163, 184, 0.25);
         }
 
@@ -87,38 +86,13 @@
             gap: 10px;
         }
 
-        .logo-mark {
-            width: 32px;
-            height: 32px;
-            border-radius: 999px;
-            background: conic-gradient(
-                    from 180deg,
-                    #22d3ee,
-                    #7c3aed,
-                    #ec4899,
-                    #22d3ee
-            );
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 18px rgba(129, 140, 248, 0.7);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .logo-mark-inner {
-            width: 22px;
-            height: 22px;
-            border-radius: inherit;
-            background: radial-gradient(circle at 30% 0%, #0f172a, #020617);
-            border: 1px solid rgba(15, 23, 42, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: 700;
-            color: #e5e7eb;
-            letter-spacing: 0.03em;
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            object-fit: contain;
+            background: rgba(15, 23, 42, 0.9);
+            box-shadow: 0 0 12px rgba(148, 163, 184, 0.6);
         }
 
         .logo-text-main {
@@ -168,6 +142,15 @@
             box-shadow: 0 18px 40px rgba(59, 130, 246, 0.8);
         }
 
+        @media (max-width: 768px) {
+            .nav-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* LAYOUT */
+
         .page {
             max-width: 1120px;
             margin: 0 auto;
@@ -177,6 +160,27 @@
         section {
             margin-bottom: 80px;
         }
+
+        .section-label {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .section-title {
+            font-size: 1.7rem;
+            margin-bottom: 8px;
+        }
+
+        .section-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            max-width: 640px;
+        }
+
+        /* HERO */
 
         .hero {
             min-height: calc(100vh - 70px);
@@ -239,7 +243,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .btn {
@@ -253,7 +257,7 @@
             font-size: 0.9rem;
             font-weight: 500;
             display: inline-flex;
-            alignяз: center;
+            align-items: center;
             gap: 8px;
             cursor: pointer;
             transition: var(--transition-fast);
@@ -291,23 +295,12 @@
             border-radius: 24px;
             background: radial-gradient(circle at 0 0, rgba(59, 130, 246, 0.3), transparent 55%),
                         radial-gradient(circle at 100% 100%, rgba(236, 72, 153, 0.35), transparent 55%),
-                        rgba(15, 23, 42, 0.9);
-            border: 1px solid rgba(148, 163, 184, 0.3);
+                        rgba(15, 23, 42, 0.96);
+            border: 1px solid rgba(148, 163, 184, 0.35);
             padding: 20px 18px;
             position: relative;
             overflow: hidden;
             box-shadow: var(--shadow-soft);
-        }
-
-        .hero-card::before {
-            content: "";
-            position: absolute;
-            inset: -40%;
-            background:
-                radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.08) 0, transparent 55%),
-                radial-gradient(circle at 80% 80%, rgba(129, 140, 248, 0.12) 0, transparent 55%);
-            opacity: 0.9;
-            mix-blend-mode: screen;
         }
 
         .hero-card-inner {
@@ -322,7 +315,7 @@
             font-size: 0.75rem;
             padding: 6px 10px;
             border-radius: 999px;
-            background: rgba(15, 23, 42, 0.8);
+            background: rgba(15, 23, 42, 0.85);
             border: 1px solid rgba(148, 163, 184, 0.5);
             margin-bottom: 14px;
         }
@@ -346,6 +339,239 @@
             color: var(--text-muted);
             margin-bottom: 16px;
         }
+
+        .hero-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .hero-meta-item {
+            padding: 10px;
+            border-radius: 14px;
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(148, 163, 184, 0.38);
+            font-size: 0.8rem;
+        }
+
+        .hero-meta-label {
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            margin-bottom: 4px;
+        }
+
+        .hero-meta-value {
+            font-weight: 600;
+        }
+
+        .hero-tagline {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        /* CARDS & GRIDS */
+
+        .card {
+            border-radius: var(--radius-xl);
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-soft);
+            padding: 18px 18px 16px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .card-title {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .card-text {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+            gap: 24px;
+            margin-top: 26px;
+        }
+
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            padding: 4px 9px;
+            border-radius: 999px;
+            font-size: 0.76rem;
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            color: var(--text-muted);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
+            margin-top: 26px;
+        }
+
+        .project-card {
+            border-radius: var(--radius-xl);
+            background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.15), transparent 55%),
+                        rgba(15, 23, 42, 0.97);
+            border: 1px solid rgba(148, 163, 184, 0.45);
+            padding: 16px 14px 14px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-fast);
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.95);
+            border-color: rgba(56, 189, 248, 0.7);
+        }
+
+        .project-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .project-title {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .project-text {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .project-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .link-ghost {
+            font-size: 0.8rem;
+            color: #bae6fd;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .link-ghost:hover {
+            text-decoration: underline;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 18px;
+            margin-top: 24px;
+        }
+
+        .tech-item-title {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .tech-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tech-pill {
+            padding: 4px 8px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            color: var(--text-muted);
+        }
+
+        .process-list {
+            margin-top: 18px;
+            padding-left: 18px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .process-list li {
+            margin-bottom: 8px;
+        }
+
+        .contact-card {
+            margin-top: 24px;
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 800px) {
+            .contact-card {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        .contact-lines {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .chip-link {
+            padding: 7px 12px;
+            font-size: 0.8rem;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.6);
+            background: rgba(15, 23, 42, 0.98);
+            color: var(--text-main);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition-fast);
+        }
+
+        .chip-link:hover {
+            border-color: rgba(56, 189, 248, 0.8);
+            color: #e0f2fe;
+            transform: translateY(-1px);
+        }
+
+        footer {
+            border-top: 1px solid rgba(31, 41, 55, 0.9);
+            padding: 16px 20px 24px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -354,28 +580,496 @@
 <header class="nav">
     <div class="nav-inner">
         <div class="logo">
-            <div class="logo-mark">
-                <div class="logo-mark-inner">DG</div>
-            </div>
+            <img src="LogoDooGamesStudio.png" alt="DOO Games Studio logo" class="logo-img" />
             <div>
-                <div class="logo-text-main">DooGamesStudio</div>
-                <div class="logo-text-sub">Indie & AI-driven gamedev</div>
+                <div class="logo-text-main">DOO Games Studio</div>
+                <div class="logo-text-sub">Unity Technical Lead · Game Dev & AI Tooling</div>
             </div>
         </div>
+
+        <nav class="nav-links">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#expertise" class="nav-link">Expertise</a>
+            <a href="#projects" class="nav-link">Key Projects</a>
+            <a href="#ai-tools" class="nav-link">AI & Tools</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#contact" class="nav-link nav-link-primary">Contact</a>
+        </nav>
     </div>
 </header>
 
 <main class="page">
+    <!-- HERO -->
     <section class="hero" id="top">
         <div>
-            <div class="section-label">Indie Game Studio</div>
+            <div class="section-label">Portfolio of Oleksii Dolbonosov</div>
             <h1 class="hero-main-title">
-                <span class="hero-gradient">DooGamesStudio</span><br />
-                games, runners & AI experiments.
+                <span class="hero-gradient">DOO Games Studio</span><br />
+                Unity Technical Lead & AI-assisted game development.
             </h1>
+
+            <p class="hero-subtitle">
+                13+ years in MMORPGs, shooters, AR/VR and mobile simulations.
+                Strong in clean client–server architecture, performance optimization and production-ready code.
+                Building DOO Games Studio as a personal lab for prototypes, tools and high-impact projects.
+            </p>
+
+            <div class="hero-badges">
+                <div class="badge badge-pill">Unity · DOTS/ECS · URP</div>
+                <div class="badge">MMO · Runners · Simulators</div>
+                <div class="badge">.NET 6–8 · Microservices</div>
+                <div class="badge">AI · LLM · LangChain</div>
+            </div>
+
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">
+                    <span class="icon">🎮</span>
+                    <span>View key projects</span>
+                </a>
+                <a href="https://github.com/oleksiidolbonosov" target="_blank" class="btn">
+                    <span class="icon">🐙</span>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com/in/oleksii-dolbonosov-10b35715a" target="_blank" class="btn">
+                    <span class="icon">💼</span>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+
+            <div class="hero-note">
+                Based in Mykolayiv, Ukraine · available for remote roles, co-dev and technical leadership.
+            </div>
+        </div>
+
+        <aside class="hero-card">
+            <div class="hero-card-inner">
+                <div class="hero-pill">
+                    <span class="hero-pill-dot"></span>
+                    <span>Hands-on leadership · Deep systems · Clean architecture</span>
+                </div>
+                <div class="hero-card-title">Executive summary</div>
+                <div class="hero-card-text">
+                    Unity Technical Lead with experience from social MMORPGs to VR healthcare visualization
+                    and industrial simulators. Comfortable driving both codebase quality and gameplay feel, from prototypes
+                    to shipped products.
+                </div>
+
+                <div class="hero-meta-grid">
+                    <div class="hero-meta-item">
+                        <div class="hero-meta-label">Core engines</div>
+                        <div class="hero-meta-value">Unity 3.5–6000 · URP · DOTS</div>
+                    </div>
+                    <div class="hero-meta-item">
+                        <div class="hero-meta-label">Backend</div>
+                        <div class="hero-meta-value">.NET 6–8 · REST · Microservices · Docker/K8s</div>
+                    </div>
+                    <div class="hero-meta-item">
+                        <div class="hero-meta-label">Networking</div>
+                        <div class="hero-meta-value">Photon · Mirror · Custom</div>
+                    </div>
+                    <div class="hero-meta-item">
+                        <div class="hero-meta-label">Platforms</div>
+                        <div class="hero-meta-value">Mobile · Desktop · VR</div>
+                    </div>
+                </div>
+
+                <div class="hero-tagline">
+                    Focus: intelligent systems, reliable networking, strong moment-to-moment gameplay and tools that
+                    make teams faster.
+                </div>
+            </div>
+        </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="section-label">About</div>
+        <h2 class="section-title">Who is behind DOO Games Studio</h2>
+        <p class="section-subtitle">
+            DOO Games Studio is the personal brand of <strong>Oleksii Dolbonosov</strong> —
+            Unity Technical Lead with a background in MMORPGs, live-ops, AR/VR, and serious games for training and analytics.
+        </p>
+
+        <div class="about-grid">
+            <div>
+                <div class="card">
+                    <div class="card-title">What I like to build</div>
+                    <div class="card-text">
+                        Systems-heavy games and tools where architecture actually matters:
+                        MMO backends, session shooters, drilling simulators, AR adventures, XR visualizations and
+                        internal AI pipelines for content & code.
+                    </div>
+                    <div class="tag-row">
+                        <span class="tag">MMORPG & online games</span>
+                        <span class="tag">Runners & arcade</span>
+                        <span class="tag">Industrial simulators</span>
+                        <span class="tag">VR / XR apps</span>
+                        <span class="tag">AI-assisted workflows</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">How I usually work</div>
+                    <div class="card-text">
+                        Prototype-first: prove the gameplay or system with a vertical slice,
+                        then grow it with clean boundaries and testable modules. I care about performance,
+                        crash-free KPIs, and making sure the team understands the architecture — not only me.
+                    </div>
+                    <div class="tag-row">
+                        <span class="tag">SOLID · Zenject</span>
+                        <span class="tag">Profiling & optimization</span>
+                        <span class="tag">Mentoring & reviews</span>
+                        <span class="tag">CI/CD & releases</span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="card">
+                    <div class="card-title">What I bring to a team</div>
+                    <div class="card-text">
+                        A mix of hands-on coding, architecture thinking, and AI/automation mindset:
+                        I can lead the Unity side, co-design the backend, and help introduce AI tools
+                        to speed up content creation, scripting and documentation.
+                    </div>
+                    <div class="tag-row">
+                        <span class="tag">Technical leadership</span>
+                        <span class="tag">Cross-discipline communication</span>
+                        <span class="tag">AI for productivity</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERTISE -->
+    <section id="expertise">
+        <div class="section-label">Expertise</div>
+        <h2 class="section-title">Core skill set</h2>
+        <p class="section-subtitle">
+            A quick overview of the areas where I’m the most effective.
+        </p>
+
+        <div class="tech-grid">
+            <div class="card">
+                <div class="tech-item-title">Engines & graphics</div>
+                <div class="tech-pills">
+                    <span class="tech-pill">Unity 3.5–6000</span>
+                    <span class="tech-pill">URP / SRP</span>
+                    <span class="tech-pill">Shader Graph</span>
+                    <span class="tech-pill">VFX Graph</span>
+                    <span class="tech-pill">GPU instancing</span>
+                    <span class="tech-pill">Addressables</span>
+                    <span class="tech-pill">UI Toolkit</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="tech-item-title">Gameplay & systems</div>
+                <div class="tech-pills">
+                    <span class="tech-pill">Zenject / Extenject</span>
+                    <span class="tech-pill">UniTask</span>
+                    <span class="tech-pill">Rx (Reactive)</span>
+                    <span class="tech-pill">State machines</span>
+                    <span class="tech-pill">Crafting & progression</span>
+                    <span class="tech-pill">Party & guild systems</span>
+                    <span class="tech-pill">Loot, chests & rewards</span>
+                    <span class="tech-pill">Save systems</span>
+                    <span class="tech-pill">Analytics & AB-tests</span>
+                    <span class="tech-pill">Localization</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="tech-item-title">Networking & backend</div>
+                <div class="tech-pills">
+                    <span class="tech-pill">Photon / Mirror</span>
+                    <span class="tech-pill">Agora RTC</span>
+                    <span class="tech-pill">Custom protocols</span>
+                    <span class="tech-pill">.NET 6–8</span>
+                    <span class="tech-pill">REST APIs</span>
+                    <span class="tech-pill">Microservices</span>
+                    <span class="tech-pill">Docker / Docker Compose</span>
+                    <span class="tech-pill">Kubernetes</span>
+                    <span class="tech-pill">FastAPI gateways</span>
+                    <span class="tech-pill">SQL / MongoDB</span>
+                    <span class="tech-pill">Telemetry & observability</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="tech-item-title">Platforms & domains</div>
+                <div class="tech-pills">
+                    <span class="tech-pill">Android / iOS</span>
+                    <span class="tech-pill">Desktop</span>
+                    <span class="tech-pill">WebGL</span>
+                    <span class="tech-pill">VR (Quest / SteamVR)</span>
+                    <span class="tech-pill">Training simulators</span>
+                    <span class="tech-pill">Healthcare XR</span>
+                    <span class="tech-pill">Kids games</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEY PROJECTS -->
+    <section id="projects">
+        <div class="section-label">Key Projects</div>
+        <h2 class="section-title">Selected games & products</h2>
+        <p class="section-subtitle">
+            A mix of live products, shipped titles and prototypes that show how I think about gameplay,
+            networking and tooling.
+        </p>
+
+        <div class="projects-grid">
+            <article class="project-card">
+                <div class="project-label">MMORPG · Social</div>
+                <div class="project-title">WOTA</div>
+                <div class="project-text">
+                    Unity client + custom .NET server for a social MMORPG on VK/OK/Mail.ru:
+                    packet-based networking, multi-zone world, portals, monsters, real-time combat,
+                    crafting, party system, progression and chest/loot systems.
+                </div>
+                <div class="project-footer">
+                    <span>Unity · .NET · Custom netcode</span>
+                    <a class="link-ghost" href="https://www.youtube.com/watch?v=xtxRj1NpTDU" target="_blank">
+                        Watch trailer →
+                    </a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-label">MMORPG · Unreal</div>
+                <div class="project-title">Unreal-based MMORPG (custom server)</div>
+                <div class="project-text">
+                    Backend development and custom dedicated server for an Unreal Engine MMORPG:
+                    session management, game logic, persistence and communication between Unreal client and
+                    standalone server in a microservice-friendly architecture.
+                </div>
+                <div class="project-footer">
+                    <span>Unreal Engine · Custom backend</span>
+                    <span>Server-side role</span>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-label">Session shooter</div>
+                <div class="project-title">Exowar</div>
+                <div class="project-text">
+                    Room-based shooter for social networks: matchmaking, session loop, crafting,
+                    persistent progression and balance tuning, plus integration with VK/OK/Mail.ru.
+                </div>
+                <div class="project-footer">
+                    <span>Unity · Client–server</span>
+                    <a class="link-ghost" href="https://www.youtube.com/watch?v=rMG_w3pcdvE" target="_blank">
+                        Watch trailer →
+                    </a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-label">Simulation · Desktop</div>
+                <div class="project-title">Drilling Simulator</div>
+                <div class="project-text">
+                    Training simulator for oil production control: procedural drilling physics, terrain,
+                    energy/temperature systems and data output to a physical device. URP optimization and pooling.
+                </div>
+                <div class="project-footer">
+                    <span>Unity · Desktop · Training</span>
+                    <span>Internal project</span>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-label">AR adventure</div>
+                <div class="project-title">Maguss</div>
+                <div class="project-text">
+                    AR spellcasting adventure on Android/iOS: map monsters, enemy players,
+                    costumes, potions, battle mode, UI, and various game systems.
+                </div>
+                <div class="project-footer">
+                    <span>Unity · AR · Mobile</span>
+                    <a class="link-ghost" href="https://www.youtube.com/watch?v=Abe6v7FhTqc" target="_blank">
+                        Gameplay video →
+                    </a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-label">Puzzle · Desktop</div>
+                <div class="project-title">Riddlord: The Consequence</div>
+                <div class="project-text">
+                    Puzzle-adventure game with cinematic cameras and intricate level scripting.
+                    Worked on puzzle mechanics, interactions and camera rails.
+                </div>
+                <div class="project-footer">
+                    <span>Unity · Desktop</span>
+                    <a class="link-ghost" href="https://www.youtube.com/watch?v=qGlVydA6dRs" target="_blank">
+                        Trailer →
+                    </a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-label">XR · Healthcare</div>
+                <div class="project-title">Amplifier AI VR</div>
+                <div class="project-text">
+                    Healthcare visualization in XR: AI diagnostics data visualized in VR; REST integration,
+                    optimization for standalone headsets and presentation of complex metrics.
+                </div>
+                <div class="project-footer">
+                    <span>Unity · VR · Data viz</span>
+                    <a class="link-ghost" href="https://amplifier.ai" target="_blank">
+                        Visit site →
+                    </a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-label">Kids · Mobile</div>
+                <div class="project-title">Dreams (Dreamsteam)</div>
+                <div class="project-text">
+                    Kids-oriented mobile game “Dreams” for Android and iOS: UI/UX polish, analytics integration,
+                    performance optimization and support of Google Play / App Store publishing pipeline.
+                </div>
+                <div class="project-footer">
+                    <span>Unity · Mobile · Android &amp; iOS</span>
+                    <a class="link-ghost" href="https://play.google.com/store/apps/details?id=com.dreamsteam.dreams" target="_blank">
+                        Google Play →
+                    </a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-label">Runner prototype</div>
+                <div class="project-title">Escape from Gold</div>
+                <div class="project-text">
+                    Atmospheric runner prototype: procedural terrain, physics-based movement,
+                    item system and early balancing experiments for speed/weight.
+                </div>
+                <div class="project-footer">
+                    <span>Unity · Runner</span>
+                    <span>Prototype</span>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-label">Arcade · Mobile</div>
+                <div class="project-title">Condom Game & Cosmos Clicker</div>
+                <div class="project-text">
+                    Satirical arcade about “sperm racing” & a space-themed clicker inspired by Flappy Bird:
+                    fast prototypes with clear mechanics and playful themes.
+                </div>
+                <div class="project-footer">
+                    <span>Unity · Mobile</span>
+                    <a class="link-ghost" href="https://www.youtube.com/watch?v=5OynrkPFf8o" target="_blank">
+                        Condom Game →
+                    </a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-label">Holiday runner</div>
+                <div class="project-title">Santa Runner</div>
+                <div class="project-text">
+                    Holiday-themed runner: rabbit, egg-collection mechanics, festive content,
+                    multiple regional versions and localization.
+                </div>
+                <div class="project-footer">
+                    <span>Unity · Runner</span>
+                    <span>Android / iOS</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- AI & TOOLS -->
+    <section id="ai-tools">
+        <div class="section-label">AI & Tooling</div>
+        <h2 class="section-title">AI/LLM R&D and developer tooling</h2>
+        <p class="section-subtitle">
+            Parallel to game work, I’m building internal pipelines and tools that use LLMs and Python to speed up
+            content creation, documentation and backend workflows.
+        </p>
+
+        <div class="card">
+            <div class="card-title">AI Game Studio pipeline (R&D)</div>
+            <div class="card-text">
+                Unity–Python workflows for assisted content creation and automation: local LLM inference with Ollama,
+                LangChain tools, prompt-based code generation, image/data pipelines via ComfyUI and FastAPI microservices
+                for gameplay tooling and live-ops dashboards.
+            </div>
+            <div class="tag-row">
+                <span class="tag">Ollama · OpenAI · DeepSeek</span>
+                <span class="tag">LangChain</span>
+                <span class="tag">ComfyUI</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">Internal tools</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+        <div class="section-label">Experience</div>
+        <h2 class="section-title">Summary of roles</h2>
+        <p class="section-subtitle">
+            Full CV and more details are available on request or via LinkedIn.
+        </p>
+
+        <div class="card">
+            <ul class="process-list">
+                <li><strong>Unity Technical Lead</strong> — various projects (2021–2025): MMO backend design with microservices, Docker/Kubernetes, VR/healthcare visualization, kids games, internal AI tooling.</li>
+                <li><strong>Senior Unity / .NET Developer</strong> — long-term work on online and mobile games, training simulators and cross-platform titles.</li>
+                <li><strong>Unity Developer</strong> — early-era social network games (VK/OK/Mail.ru), runners, arcades and adver-games.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="section-label">Contact</div>
+        <h2 class="section-title">Let’s talk</h2>
+        <p class="section-subtitle">
+            Open to remote roles (full-time or long-term contract), co-development on ambitious games,
+            and collaborations around AI-assisted gamedev tooling.
+        </p>
+
+        <div class="contact-card card">
+            <div class="contact-lines">
+                <p>
+                    <strong>Preferred schedule:</strong> full-time, remote.<br />
+                    <strong>Location:</strong> Mykolayiv, Ukraine (UTC+2).
+                </p>
+                <p>
+                    Best way to reach out: send a short intro + what you’re building (platform, engine, timeline),
+                    and I’ll reply with how I can help — technically and in terms of scope.
+                </p>
+            </div>
+
+            <div>
+                <div class="contact-links">
+                    <a class="chip-link" href="mailto:narush1985@gmail.com">
+                        ✉️ Email: narush1985@gmail.com
+                    </a>
+                    <a class="chip-link" href="https://t.me/OleksiiDolbonosov" target="_blank">
+                        💬 Telegram
+                    </a>
+                    <a class="chip-link" href="https://github.com/oleksiidolbonosov" target="_blank">
+                        🐙 GitHub
+                    </a>
+                    <a class="chip-link" href="https://linkedin.com/in/oleksii-dolbonosov-10b35715a" target="_blank">
+                        💼 LinkedIn
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 </main>
+
+<footer>
+    © 2025 — DOO Games Studio / Oleksii Dolbonosov. Built with Unity mindset, clean architecture and a lot of prototypes.
+</footer>
 
 </body>
 </html>
