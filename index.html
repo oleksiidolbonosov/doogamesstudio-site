@@ -263,10 +263,6 @@
             transition: var(--transition-fast);
         }
 
-        .btn span.icon {
-            font-size: 1.05rem;
-        }
-
         .btn:hover {
             transform: translateY(-1px);
             border-color: rgba(148, 163, 184, 0.9);
@@ -370,6 +366,27 @@
             color: var(--text-muted);
         }
 
+        /* ICONS (SOCIAL LOGOS) */
+
+        .icon-circle {
+            width: 22px;
+            height: 22px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.95);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 0 8px rgba(15, 23, 42, 0.9);
+        }
+
+        .icon-img {
+            width: 14px;
+            height: 14px;
+            object-fit: contain;
+            display: block;
+        }
+
         /* CARDS & GRIDS */
 
         .card {
@@ -467,6 +484,8 @@
             align-items: center;
             font-size: 0.78rem;
             color: var(--text-muted);
+            gap: 6px;
+            flex-wrap: wrap;
         }
 
         .link-ghost {
@@ -555,7 +574,7 @@
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             transition: var(--transition-fast);
         }
 
@@ -571,6 +590,86 @@
             font-size: 0.8rem;
             color: var(--text-muted);
             text-align: center;
+        }
+
+        /* VIDEO SHOWCASE */
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+            margin-top: 26px;
+        }
+
+        .video-card {
+            border-radius: var(--radius-xl);
+            background: rgba(15, 23, 42, 0.97);
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-thumb {
+            position: relative;
+            display: block;
+            overflow: hidden;
+        }
+
+        .video-thumb img {
+            width: 100%;
+            display: block;
+            transform: scale(1.03);
+            transition: transform var(--transition-fast);
+        }
+
+        .video-thumb::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 50%, transparent 0, rgba(15, 23, 42, 0.55) 70%);
+        }
+
+        .video-play {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .video-play-inner {
+            width: 52px;
+            height: 52px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #e5e7eb;
+            box-shadow: 0 14px 35px rgba(15, 23, 42, 0.9);
+        }
+
+        .video-card:hover .video-thumb img {
+            transform: scale(1.07);
+        }
+
+        .video-body {
+            padding: 12px 14px 14px;
+        }
+
+        .video-title {
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .video-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
         }
     </style>
 </head>
@@ -591,6 +690,7 @@
             <a href="#about" class="nav-link">About</a>
             <a href="#expertise" class="nav-link">Expertise</a>
             <a href="#projects" class="nav-link">Key Projects</a>
+            <a href="#videos" class="nav-link">Videos</a>
             <a href="#ai-tools" class="nav-link">AI & Tools</a>
             <a href="#experience" class="nav-link">Experience</a>
             <a href="#contact" class="nav-link nav-link-primary">Contact</a>
@@ -623,15 +723,19 @@
 
             <div class="hero-actions">
                 <a href="#projects" class="btn btn-primary">
-                    <span class="icon">🎮</span>
+                    <span>🎮</span>
                     <span>View key projects</span>
                 </a>
                 <a href="https://github.com/oleksiidolbonosov" target="_blank" class="btn">
-                    <span class="icon">🐙</span>
+                    <span class="icon-circle">
+                        <img src="github-mark-white.png" alt="GitHub logo" class="icon-img" />
+                    </span>
                     <span>GitHub</span>
                 </a>
                 <a href="https://linkedin.com/in/oleksii-dolbonosov-10b35715a" target="_blank" class="btn">
-                    <span class="icon">💼</span>
+                    <span class="icon-circle">
+                        <img src="InBug-White.png" alt="LinkedIn logo" class="icon-img" />
+                    </span>
                     <span>LinkedIn</span>
                 </a>
             </div>
@@ -983,6 +1087,82 @@
         </div>
     </section>
 
+    <!-- VIDEO SHOWCASE -->
+    <section id="videos">
+        <div class="section-label">Video showcase</div>
+        <h2 class="section-title">Trailers & gameplay</h2>
+        <p class="section-subtitle">
+            A quick visual overview of some projects — click a thumbnail to open the corresponding YouTube video.
+        </p>
+
+        <div class="video-grid">
+            <article class="video-card">
+                <a class="video-thumb" href="https://www.youtube.com/watch?v=xtxRj1NpTDU" target="_blank">
+                    <img src="https://img.youtube.com/vi/xtxRj1NpTDU/hqdefault.jpg" alt="WOTA trailer thumbnail" />
+                    <div class="video-play">
+                        <div class="video-play-inner">▶</div>
+                    </div>
+                </a>
+                <div class="video-body">
+                    <div class="video-title">WOTA — social MMORPG trailer</div>
+                    <div class="video-meta">Unity · custom .NET server · VK/OK</div>
+                </div>
+            </article>
+
+            <article class="video-card">
+                <a class="video-thumb" href="https://www.youtube.com/watch?v=rMG_w3pcdvE" target="_blank">
+                    <img src="https://img.youtube.com/vi/rMG_w3pcdvE/hqdefault.jpg" alt="Exowar shooter thumbnail" />
+                    <div class="video-play">
+                        <div class="video-play-inner">▶</div>
+                    </div>
+                </a>
+                <div class="video-body">
+                    <div class="video-title">Exowar — session shooter</div>
+                    <div class="video-meta">Unity · matchmaking · crafting & progression</div>
+                </div>
+            </article>
+
+            <article class="video-card">
+                <a class="video-thumb" href="https://www.youtube.com/watch?v=Abe6v7FhTqc" target="_blank">
+                    <img src="https://img.youtube.com/vi/Abe6v7FhTqc/hqdefault.jpg" alt="Maguss AR gameplay thumbnail" />
+                    <div class="video-play">
+                        <div class="video-play-inner">▶</div>
+                    </div>
+                </a>
+                <div class="video-body">
+                    <div class="video-title">Maguss — AR spellcasting gameplay</div>
+                    <div class="video-meta">Unity · AR · mobile</div>
+                </div>
+            </article>
+
+            <article class="video-card">
+                <a class="video-thumb" href="https://www.youtube.com/watch?v=qGlVydA6dRs" target="_blank">
+                    <img src="https://img.youtube.com/vi/qGlVydA6dRs/hqdefault.jpg" alt="Riddlord trailer thumbnail" />
+                    <div class="video-play">
+                        <div class="video-play-inner">▶</div>
+                    </div>
+                </a>
+                <div class="video-body">
+                    <div class="video-title">Riddlord: The Consequence — trailer</div>
+                    <div class="video-meta">Unity · puzzle adventure · desktop</div>
+                </div>
+            </article>
+
+            <article class="video-card">
+                <a class="video-thumb" href="https://www.youtube.com/watch?v=5OynrkPFf8o" target="_blank">
+                    <img src="https://img.youtube.com/vi/5OynrkPFf8o/hqdefault.jpg" alt="Condom Game gameplay thumbnail" />
+                    <div class="video-play">
+                        <div class="video-play-inner">▶</div>
+                    </div>
+                </a>
+                <div class="video-body">
+                    <div class="video-title">Condom Game — satirical arcade</div>
+                    <div class="video-meta">Unity · mobile prototype</div>
+                </div>
+            </article>
+        </div>
+    </section>
+
     <!-- AI & TOOLS -->
     <section id="ai-tools">
         <div class="section-label">AI & Tooling</div>
@@ -1050,16 +1230,31 @@
             <div>
                 <div class="contact-links">
                     <a class="chip-link" href="mailto:narush1985@gmail.com">
-                        ✉️ Email: narush1985@gmail.com
+                        <span class="icon-circle">
+                            <img src="logo-white.png" alt="Email icon" class="icon-img" />
+                        </span>
+                        <span>Email: narush1985@gmail.com</span>
                     </a>
                     <a class="chip-link" href="https://t.me/OleksiiDolbonosov" target="_blank">
                         💬 Telegram
                     </a>
                     <a class="chip-link" href="https://github.com/oleksiidolbonosov" target="_blank">
-                        🐙 GitHub
+                        <span class="icon-circle">
+                            <img src="github-mark-white.png" alt="GitHub logo" class="icon-img" />
+                        </span>
+                        <span>GitHub</span>
                     </a>
                     <a class="chip-link" href="https://linkedin.com/in/oleksii-dolbonosov-10b35715a" target="_blank">
-                        💼 LinkedIn
+                        <span class="icon-circle">
+                            <img src="InBug-White.png" alt="LinkedIn logo" class="icon-img" />
+                        </span>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a class="chip-link" href="https://www.youtube.com/@doogamesstudio" target="_blank">
+                        <span class="icon-circle">
+                            <img src="yt_logo_white_digital.png" alt="YouTube logo" class="icon-img" />
+                        </span>
+                        <span>YouTube</span>
                     </a>
                 </div>
             </div>
@@ -1068,7 +1263,8 @@
 </main>
 
 <footer>
-    © 2025 — DOO Games Studio / Oleksii Dolbonosov. Built with Unity mindset, clean architecture and a lot of prototypes.
+    © 2025 DOO Games Studio — Oleksii Dolbonosov.<br/>
+    Portfolio website. All game assets, videos and trademarks belong to their respective owners.
 </footer>
 
 </body>
