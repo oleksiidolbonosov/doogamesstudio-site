@@ -1,0 +1,26 @@
+{
+  "default_app": "guess-the-prompt",
+  "apps": [
+    {
+      "slug": "guess-the-prompt",
+      "name": "GUESS THE PROMPT",
+      "effective_date": "January 25, 2026",
+      "developer": "Doo Games Studio",
+      "contact_email": "doogamesstudio@gmail.com"
+    },
+    {
+      "slug": "chrono-merge",
+      "name": "Chrono Merge",
+      "effective_date": "January 25, 2026",
+      "developer": "Doo Games Studio",
+      "contact_email": "doogamesstudio@gmail.com"
+    },
+    {
+      "slug": "calm-decision",
+      "name": "Calm Decision",
+      "effective_date": "January 25, 2026",
+      "developer": "Doo Games Studio",
+      "contact_email": "doogamesstudio@gmail.com"
+    }
+  ]
+}
