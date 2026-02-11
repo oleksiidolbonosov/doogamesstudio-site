@@ -1,9 +1,9 @@
 {
-  "default_app": "guess-the-prompt",
+  "default_app": "promptlyss",
   "apps": [
     {
-      "slug": "guess-the-prompt",
-      "name": "GUESS THE PROMPT",
+      "slug": "promptlyss",
+      "name": "Promptlyss",
       "effective_date": "January 25, 2026",
       "developer": "Doo Games Studio",
       "contact_email": "doogamesstudio@gmail.com"
